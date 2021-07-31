@@ -124,7 +124,7 @@ $ sudo lspci -v -x -s 04:00.0
 
 See again the /proc/iomem and compare it with the lspci.
 ```
-  ...
+    ...
   d0000000-efffffff : PCI Bus 0000:04
     d0000000-dfffffff : 0000:04:00.0   ---> Memory at d0000000 (64-bit, prefetchable) [size=256M]
     e0000000-e1ffffff : 0000:04:00.0   ---> Memory at e0000000 (64-bit, prefetchable) [size=32M]
@@ -139,8 +139,8 @@ See again the /proc/iomem and compare it with the lspci.
 DMA is a copy of data between the PCI device's memory and host memory without CPU load. 
 DMA is very similar to MMIO's behavior but DMA is performed by DMA engine on the PCI device not by CPU. 
 DMA engine should fetch some instructions created by the Device Driver from host memory in advance.
-The instruction has the kernel's pysical memory address which the DMA engine can copy the data from BAR to.
-After interruption, CPU will copy it to the User space via virtual address.
+The instruction has the kernel's pysical memory address which the DMA engine can copy the data from the BAR space to.
+After interruption, CPU will copy it to the User space via virtual address. Of cource it needs address translations and so heavy overheads.
 Especially, if the address in the instruction refers user space, then we call it RDMA or Kernel Bypass. 
 ```
           Pysical Memory
