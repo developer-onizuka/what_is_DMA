@@ -1,5 +1,5 @@
 # 1. Mapping of Physical Address
-As you can see below, not only the physical address originaded from Main Memory but the physical address from PCI or BIOS.
+As you can see below, /proc/iomem says not only the physical address originaded from Main Memory but the physical address from PCI or BIOS.
 ```
 $ sudo cat /proc/iomem 
 00000000-00000fff : Reserved
