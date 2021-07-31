@@ -135,4 +135,29 @@ See again the /proc/iomem and compare it with the lspci.
     fc000000-fc07ffff : 0000:04:00.0   ---> Expansion ROM at fc000000 [virtual] [disabled] [size=512K]
 ```
 
+# 3. What is DMA ?
+DMA is a copy of data between the PCI device's memory and host memory without CPU load. 
+DMA is very similar to MMIO's behavior but DMA is performed by DMA engine on the PCI device not by CPU. 
+DMA engine should fetch some instructions created by the Device Driver from host memory in advance.
+```
+          Pysical Memory
+          +----------+
+          |          |
+          |          |
+          +----------+ 0xdfffffff
+   +------|XXXXXXXXXX|
+   |      +----------+ 0xd0000000 (GPU BAR#1)
+   |      |          |
+ COPY     |          |
+   |      |          |
+   |      +----------+ 
+   +----->|XXXXXXXXXX|
+          +----------+ Host Memory for DMA operation
+          |          |
+          |          |
+          |          |
+          +----------+ 0x00000000
 
+
+
+```
