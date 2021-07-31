@@ -152,12 +152,17 @@ Especially, if the address in the instruction refers user space, then we call it
    |      +----------+ 0xd0000000 (GPU BAR#1)
    |      |          |
  Copy     |          |
-   |      |          |                                           User Space
+   |      |          |                                           User Space (Virtual Address)
    |      +----------+                                          +----------+
    +----->|XXXXXXXXXX|                                  Copy    |          |
-          +----------+ Host Memory for DMA operation  --------> |          |
-          |          |                                          |          |
-          |          |                                          +----------+
+          +----------+ Host Memory for DMA operation  --------> |XXXXXXXXXX|
+          |          |                                  +-----> |          |
+          |          |                                  |       +----------+
+          |          |                                  |
+	  +----------+                                  |
+          |XXXXXXXXXX| <--------------------------------+
+	  +----------+ User Space (Physical Address)
+          |          |
           |          |
           +----------+ 0x00000000
 ```
