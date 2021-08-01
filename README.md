@@ -135,6 +135,18 @@ See again the /proc/iomem and compare it with the lspci.
     fc000000-fc07ffff : 0000:04:00.0   ---> Expansion ROM at fc000000 [virtual] [disabled] [size=512K]
 ```
 
+You also compare it with the files in /sys/bus/pci/devices. See below:
+```
+$ cd /sys/bus/pci/devices/0000:04:00.0
+$ ls -l resource*
+-r--r--r-- 1 root root      4096  8月  1 18:43 resource
+-rw------- 1 root root  16777216  8月  1 19:29 resource0     ---> Memory at fb000000 (32-bit, non-prefetchable) [size=16M]
+-rw------- 1 root root 268435456  8月  1 19:29 resource1     ---> Memory at d0000000 (64-bit, prefetchable) [size=256M]
+-rw------- 1 root root 268435456  8月  1 19:29 resource1_wc
+-rw------- 1 root root  33554432  8月  1 19:29 resource3     ---> Memory at e0000000 (64-bit, prefetchable) [size=32M]
+-rw------- 1 root root  33554432  8月  1 19:29 resource3_wc
+-rw------- 1 root root       128  8月  1 19:29 resource5     ---> I/O ports at c000 [size=128]
+```
 # 3. What is DMA ?
 DMA is a copy of data between the PCI device's memory and host memory without CPU load. 
 DMA is very similar to MMIO's behavior but DMA is performed by DMA engine on the PCI device not by CPU. 
