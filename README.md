@@ -148,21 +148,23 @@ Especially, if the address in the instruction refers user space, then we call it
                     |          |
                     |          |
                     +----------+ 0xdfffffff
-      +------+------|XXXXXXXXXX|
+      +------------ |XXXXXXXXXX|
+      |      +----- |XXXXXXXXXX|
       |      |      +----------+ 0xd0000000 (GPU BAR#1)
-      |      |      |          |
-      |    Copy     |          |
-      |      |      |          |                                           User Space (Virtual Address)
-      |      |      +----------+                                          +----------+
-      |      +----> |XXXXXXXXXX|                                  Copy    |          |
-      |             +----------+ Host Memory for DMA operation  --------> |XXXXXXXXXX|
-      |             |          |                                  +-----> |          |
-    Kernel          |          |                                  |       +----------+
-    Bypass          |          |                                  |
-      |             +----------+                                  |
-      +-----------> |XXXXXXXXXX| <--------------------------------+
-	            +----------+ User Space (Physical Address)
-                    |          |
+      |      |      |          |                                          Kernel Space (Virtual Address)
+      |    Copy     |          |                                          +----------+
+      |    (DMA)    |          |                                          |          |
+      |      |      +----------+                                          |          | 
+    Kernel   +----> |XXXXXXXXXX|                                          |XXXXXXXXXX|
+    Bypass   +----- |XXXXXXXXXX| <================Mapping===============> |XXXXXXXXXX| -----+
+      |      |      +----------+ Host Memory for DMA operation            +----------+      |
+      |    Copy     |          | (Physical Address)                                        Copy
+      |    (CPU)    |          |                                          +----------+     (CPU)
+      |      |      +----------+                                          |          |      |
+      |      +----> |XXXXXXXXXX|                                          |XXXXXXXXXX| <----+
+      +-----------> |XXXXXXXXXX| <================Mapping===============> |XXXXXXXXXX|
+	            +----------+ User Space (Physical Address)            +----------+
+                    |          |                                          User Space (Virtual Address)
                     |          |
                     +----------+ 0x00000000
 ```
