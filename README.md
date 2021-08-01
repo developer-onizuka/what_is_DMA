@@ -93,7 +93,7 @@ fffc0000-ffffffff : Reserved
 BAR register describes a region that is between 16 bytes and 2 gigabytes in size, located below 4 gigabyte address space limit. 
 If a platform supports the "Above 4G" option in system firmware, 64 bit bars can be used.
 The following is a result of my GPU's lspci which says there are the three regions allocated for the purpose of DMA or MMIO.
-Yes, one of these regions is for DMA between host memory and device's memory used by the controller's logic.
+Yes, one of these regions is for DMA between host memory and device's memory used by the controller's logic behind its memory.
 (Ex) GPU's memory is for the calculation on GPU card or NIC's memory is for the sending/receiving messages thru the port.
 ```
 $ sudo lspci -v -x -s 04:00.0
