@@ -24,14 +24,6 @@ c0000000-febfffff : PCI Bus 0000:00
 
 ... snip ...
 
-  f1400000-f15fffff : PCI Bus 0000:02
-    f1400000-f1403fff : 0000:02:00.0
-      f1400000-f1403fff : virtio-pci-modern
-  f1600000-f17fffff : PCI Bus 0000:01
-    f1600000-f1603fff : 0000:01:00.0
-      f1600000-f1603fff : virtio-pci-modern
-  f1800000-f1803fff : 0000:00:01.0
-    f1800000-f1803fff : virtio-pci-modern
   fb000000-fcffffff : PCI Bus 0000:04
     fb000000-fbffffff : 0000:04:00.0
       fb000000-fbffffff : nvidia
@@ -42,18 +34,6 @@ c0000000-febfffff : PCI Bus 0000:00
   fd600000-fd7fffff : PCI Bus 0000:06
     fd600000-fd603fff : 0000:06:00.0
       fd600000-fd603fff : nvme
-  fd800000-fd9fffff : PCI Bus 0000:05
-    fd800000-fd803fff : 0000:05:00.0
-      fd800000-fd803fff : ICH HD audio
-  fda00000-fdbfffff : PCI Bus 0000:03
-    fda00000-fda00fff : 0000:03:00.0
-  fdc00000-fddfffff : PCI Bus 0000:02
-    fdc00000-fdc00fff : 0000:02:00.0
-  fde00000-fdffffff : PCI Bus 0000:01
-    fde00000-fde7ffff : 0000:01:00.0
-    fde80000-fde80fff : 0000:01:00.0
-  fe010000-fe013fff : 0000:00:1b.0
-    fe010000-fe013fff : ICH HD audio
     
 ... snip ...
 
