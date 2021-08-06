@@ -1,5 +1,5 @@
-# 1. Mapping of Physical Address
-As you can see below, /proc/iomem says not only the physical address originated from DIMM but the physical address from PCI device or BIOS.
+# 1. Where Physical Address came from ?
+As you can see below, /proc/iomem says not only the physical address originated from DIMM but the physical address from PCI device or BIOS. When kernel is booting, the device provides its BAR which the kernel then maps into main memory. The memory mappings is exposed to userspace via /proc/iomem.
 ```
 $ sudo cat /proc/iomem 
 00000000-00000fff : Reserved
