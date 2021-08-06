@@ -133,7 +133,7 @@ Especially, if the address in the instruction refers user space, then we call it
                     |          |
                     +----------+ 0x00000000
 ```
-See also below:
-```
+See also below: 
+
 https://stackoverflow.com/questions/3851677/what-is-the-difference-between-dma-and-memory-mapped-io
-```
+
