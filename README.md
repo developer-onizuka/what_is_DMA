@@ -136,4 +136,4 @@ Especially, if the address in the instruction refers user space, then we call it
 See also below: 
 
 https://stackoverflow.com/questions/3851677/what-is-the-difference-between-dma-and-memory-mapped-io
-
+https://softwareengineering.stackexchange.com/questions/272470/how-does-a-dma-controller-work
