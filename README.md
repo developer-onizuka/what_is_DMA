@@ -108,7 +108,7 @@ The instruction has the kernel's pysical memory address which the DMA engine can
 After interruption from DMA engine which already finished the copy, CPU will copy it to the User space via virtual address. Of cource it needs address translations and so heavy overheads.
 Especially, if the address in the instruction refers user space, then we call it RDMA or Kernel Bypass. But then, please note the translation between physical address to virtual address should be performed on the PCI device's DMA engine itself not by OS and CPUs!
 ```
-                    Pysical Memory
+                    Physical Memory
                     +----------+
                     |          |
                     |          |
