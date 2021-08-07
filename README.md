@@ -105,7 +105,7 @@ DMA is a copy of data between the PCI device's memory and host memory without CP
 DMA is very similar to MMIO's behavior but DMA is performed by DMA engine on the PCI device not by CPU. 
 DMA engine should fetch some instructions created by the Device Driver from host memory in advance.
 The instruction has the kernel's pysical memory address which the DMA engine can copy the data from the BAR space to.
-After interruption from DMA engine which already finished the copy, CPU will copy it to the User space via virtual address. Of cource it needs address translations and so heavy overheads.
+After interrups from DMA engine which already finished the copy, CPU will copy it to the User space via virtual address. Of cource it needs address translations and so heavy overheads.
 Especially, if the address in the instruction refers user space, then we call it RDMA or Kernel Bypass. But then, please note the translation between physical address to virtual address should be performed on the PCI device's DMA engine itself not by OS and CPUs!
 ```
                     Physical Memory
