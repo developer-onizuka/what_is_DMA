@@ -100,6 +100,9 @@ $ ls -l resource*
 -rw------- 1 root root  33554432  8月  1 19:29 resource3_wc
 -rw------- 1 root root       128  8月  1 19:29 resource5     ---> I/O ports at c000 [size=128]
 ```
+
+![BAR.png](https://github.com/developer-onizuka/what_is_DMA/blob/main/BAR.png)
+
 # 3. What is DMA ?
 DMA is a copy of data between the PCI device's memory and host memory without CPU load. 
 DMA is very similar to MMIO's behavior but DMA is performed by DMA engine on the PCI device not by CPU. 
