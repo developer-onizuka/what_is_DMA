@@ -100,7 +100,7 @@ $ ls -l resource*
 -rw------- 1 root root  33554432  8月  1 19:29 resource3_wc
 -rw------- 1 root root       128  8月  1 19:29 resource5     ---> I/O ports at c000 [size=128]
 ```
-Device memory regions (BARs) are mapped into the same address space as system memory. You might understand it better with the following picture:  
+Device memory regions (BARs) are mapped into the same address space as system memory. You might understand it better through the picture below:<br> 
 ![BAR.png](https://github.com/developer-onizuka/what_is_DMA/blob/main/BAR.png)
 
 # 3. What is DMA ?
